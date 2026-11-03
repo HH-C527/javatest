@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.example.music'
+version = '1.0.0'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // 编译期依赖：全部使用项目 lib/ 下的本地 jar，无需联网下载
+    // 运行时由 Tomcat 的 WEB-INF/lib 提供
+    compileOnly files(
+            'lib/servlet-api.jar',
+            'lib/h2-1.4.200.jar',
+            'lib/jstl-1.2.jar'
+    )
+}
